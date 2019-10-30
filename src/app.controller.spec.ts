@@ -2,8 +2,9 @@ import { TestingModule, Test } from '@nestjs/testing'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 
-describe('AppController', () => {
+describe('AppControllerTests', () => {
 	let app: TestingModule
+
 	beforeAll(async () => {
 		app = await Test.createTestingModule({
 			controllers: [AppController],
@@ -11,10 +12,10 @@ describe('AppController', () => {
 		}).compile()
 	})
 
-	describe('getHello', () => {
-		it('should return "Hello World!"', async () => {
-			const controller = app.get(AppController)
-			expect(await controller.index()).toBe('Hello World!')
+	describe('index API', () => {
+		it('should return Hello World!', async () => {
+			const appController = app.get(AppController)
+			expect(await appController.index()).toBe('Hello World!')
 		})
 	})
 })
