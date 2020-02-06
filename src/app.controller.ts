@@ -7,6 +7,6 @@ export class AppController {
 
 	@Get()
 	async index() {
-		return this.service.getHello()
+		return this.service.getHelloForNestJS()
 	}
 }
